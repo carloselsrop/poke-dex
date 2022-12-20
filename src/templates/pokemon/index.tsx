@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { graphql, Link, PageProps } from 'gatsby'
 import Navbar from '../../components/Navbar'
 import TypePokemon from '../../components/TypePokemon'
@@ -50,7 +50,7 @@ const Pokemon: React.FC<PageProps<{ pokeApi: any }>> = ({ data }: any) => {
               </Link>
               <div className='space-x-2 flex'>
                 {data.pokeApi.card.types?.map((type: any) => (
-                  <TypePokemon type={type ? type : 'Normal'} />
+                  <TypePokemon type={type ? type : 'Normal'} key={type} />
                 ))}
               </div>
               <div className='text-white font-bold select-none bg-gray-500 bg-opacity-80 py-1 w-16 rounded-lg text-center border-2 border-white'>
@@ -136,7 +136,6 @@ export const pageQuery = graphql`
     pokeApi {
       card(id: $pokemonId) {
         id
-        dexId
         name
         dexId
         types
