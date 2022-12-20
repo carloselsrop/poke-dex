@@ -43,4 +43,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage
 
-export const Head: HeadFC = () => <title>Pokedex App</title>
+export const Head: HeadFC = () => <title>Pokedex</title>
