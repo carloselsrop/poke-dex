@@ -132,7 +132,7 @@ const Pokemon: React.FC<PageProps<{ pokeApi: any }>> = ({ data }: any) => {
 }
 
 export const pageQuery = graphql`
-  query PokemonPageQuery($pokemonId: ID!) {
+  query ($pokemonId: ID!) {
     pokeApi {
       card(id: $pokemonId) {
         id

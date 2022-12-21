@@ -62,7 +62,7 @@ const Pokemons: React.FC<PageProps<{ pokeApi: any }>> = ({
 }
 
 export const pageQuery = graphql`
-  query pokemonsPageQuery($count: Float!, $page: Float!) {
+  query ($count: Float!, $page: Float!) {
     pokeApi {
       cards(pagination: { page: $page, count: $count }) {
         id
